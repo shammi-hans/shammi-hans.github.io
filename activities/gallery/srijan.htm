@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Srijan vol 4, The Annual Magazine</title>
+		<meta name="description" content="Text Opening Sequence with CSS Animations" />
+		<meta name="author" content="univ"/>
+		<link rel="icon" type="image/x-icon" href="sanku13/sanku_icon.ico">
+		<link rel="stylesheet" type="text/css" href="css/text_ka_default.css" />
+		<link rel="stylesheet" type="text/css" href="css/text_ka_component.css  " />
+		<link rel="stylesheet" type="text/css" href="css/gallery_ka_component.css" />
+		<script src="js/text_ka_modernizer.custom.js"></script>
+		
+<style type="text/css">
+body { width:100%; margin:auto; }
+.matrix {
+	font-family: '';
+	font-size:9pt; padding:0px; margin:0px;
+	width: 750px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+.sri{
+	position: fixed;
+	top: 8%;
+	left: 46%;
+	color: #BFDBDA;
+	z-index: 100;
+
+	}
+.sri h2{
+	position: fixed;
+	top: 20%;
+	left: 43%;
+	margin-left: auto;
+	margin-right: auto;
+	color: #FFF;
+	z-index: 100;
+    text-shadow: 0 0 150px #FFF, 0 0 60px #FFF, 0 0 10px #FFF;
+	}
+
+
+
+</style>
+<script type="text/javascript" language="JavaScript">
+
+var rows=32; // must be an odd number
+var speed=5; // lower is faster
+var reveal=2; // between 0 and 2 only. The higher, the faster the word appears
+//var effectalign="default" 
+var effectalign="center" //uncomment 'var' to center it.
+
+
+var w3c=document.getElementById && !window.opera;;
+var ie45=document.all && !window.opera;
+var ma_tab, matemp, ma_bod, ma_row, x, y, columns, ma_txt, ma_cho;
+var m_coch=new Array();
+var m_copo=new Array();
+window.onload=function() {
+if (!w3c && !ie45) return
+var matrix=(w3c)?document.getElementById("matrix"):document.all["matrix"];
+ma_txt=(w3c)?matrix.firstChild.nodeValue:matrix.innerHTML;
+
+ma_txt="1010田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑001010";
+columns=ma_txt.length;
+if (w3c) {
+while (matrix.childNodes.length) matrix.removeChild(matrix.childNodes[0]);
+ma_tab=document.createElement("table");
+ma_tab.setAttribute("border", 0);
+ma_tab.setAttribute("align", effectalign);
+ma_tab.style.backgroundColor="#000000";
+ma_bod=document.createElement("tbody");
+for (x=0; x<rows; x++) {
+ma_row=document.createElement("tr");
+for (y=0; y<columns; y++) {
+matemp=document.createElement("td");
+matemp.setAttribute("id", "Mx"+x+"y"+y);
+matemp.className="matrix";
+matemp.appendChild(document.createTextNode(String.fromCharCode(160)));
+ma_row.appendChild(matemp);
+}
+ma_bod.appendChild(ma_row);
+}
+ma_tab.appendChild(ma_bod);
+matrix.appendChild(ma_tab);
+} else {
+ma_tab='<ta'+'ble align="'+effectalign+'" border="0" style="background-color:#000000">';
+for (var x=0; x<rows; x++) {
+ma_tab+='<t'+'r>';
+for (var y=0; y<columns; y++) {
+ma_tab+='<t'+'d class="matrix" id="Mx'+x+'y'+y+'">&nbsp;</'+'td>';
+}
+ma_tab+='</'+'tr>';
+}
+ma_tab+='</'+'table>';
+matrix.innerHTML=ma_tab;
+}
+ma_cho=ma_txt;
+for (x=0; x<columns; x++) {
+ma_cho+=String.fromCharCode(32+Math.floor(Math.random()*94));
+m_copo[x]=0;
+}
+ma_bod=setInterval("mytricks()", speed);
+}
+
+function mytricks() {
+x=0;
+for (y=0; y<columns; y++) {
+x=x+(m_copo[y]==100);
+ma_row=m_copo[y]%100;
+if (ma_row && m_copo[y]<100) {
+if (ma_row<rows+1) {
+if (w3c) {
+matemp=document.getElementById("Mx"+(ma_row-1)+"y"+y);
+matemp.firstChild.nodeValue=m_coch[y];
+}
+else {
+matemp=document.all["Mx"+(ma_row-1)+"y"+y];
+matemp.innerHTML=m_coch[y];
+}
+matemp.style.color="#33ff66";
+matemp.style.fontWeight="bold";
+}
+if (ma_row>1 && ma_row<rows+2) {
+matemp=(w3c)?document.getElementById("Mx"+(ma_row-2)+"y"+y):document.all["Mx"+(ma_row-2)+"y"+y];
+matemp.style.fontWeight="normal";
+matemp.style.color="#00ff00";
+}
+if (ma_row>2) {
+matemp=(w3c)?document.getElementById("Mx"+(ma_row-3)+"y"+y):document.all["Mx"+(ma_row-3)+"y"+y];
+matemp.style.color="#009900";
+}
+if (ma_row<Math.floor(rows/2)+1) m_copo[y]++;
+else if (ma_row==Math.floor(rows/2)+1 && m_coch[y]==ma_txt.charAt(y)) zoomer(y);
+else if (ma_row<rows+2) m_copo[y]++;
+else if (m_copo[y]<100) m_copo[y]=0;
+}
+else if (Math.random()>0.9 && m_copo[y]<100) {
+m_coch[y]=ma_cho.charAt(Math.floor(Math.random()*ma_cho.length));
+m_copo[y]++;
+}
+}
+if (x==columns) clearInterval(ma_bod);
+}
+
+function zoomer(ycol) {
+var mtmp, mtem, ytmp;
+if (m_copo[ycol]==Math.floor(rows/2)+1) {
+for (ytmp=0; ytmp<rows; ytmp++) {
+if (w3c) {
+mtmp=document.getElementById("Mx"+ytmp+"y"+ycol);
+mtmp.firstChild.nodeValue=m_coch[ycol];
+}
+else {
+mtmp=document.all["Mx"+ytmp+"y"+ycol];
+mtmp.innerHTML=m_coch[ycol];
+}
+mtmp.style.color="#33ff66";
+mtmp.style.fontWeight="bold";
+}
+if (Math.random()<reveal) {
+mtmp=ma_cho.indexOf(ma_txt.charAt(ycol));
+ma_cho=ma_cho.substring(0, mtmp)+ma_cho.substring(mtmp+1, ma_cho.length);
+}
+if (Math.random()<reveal-1) ma_cho=ma_cho.substring(0, ma_cho.length-1);
+m_copo[ycol]+=199;
+setTimeout("zoomer("+ycol+")", speed);
+}
+else if (m_copo[ycol]>200) {
+if (w3c) {
+mtmp=document.getElementById("Mx"+(m_copo[ycol]-201)+"y"+ycol);
+mtem=document.getElementById("Mx"+(200+rows-m_copo[ycol]--)+"y"+ycol);
+}
+else {
+mtmp=document.all["Mx"+(m_copo[ycol]-201)+"y"+ycol];
+mtem=document.all["Mx"+(200+rows-m_copo[ycol]--)+"y"+ycol];
+}
+mtmp.style.fontWeight="normal";
+mtem.style.fontWeight="normal";
+setTimeout("zoomer("+ycol+")", speed);
+}
+else if (m_copo[ycol]==200) m_copo[ycol]=100+Math.floor(rows/2);
+if (m_copo[ycol]>100 && m_copo[ycol]<200) {
+if (w3c) {
+mtmp=document.getElementById("Mx"+(m_copo[ycol]-101)+"y"+ycol);
+mtmp.firstChild.nodeValue=String.fromCharCode(160);
+mtem=document.getElementById("Mx"+(100+rows-m_copo[ycol]--)+"y"+ycol);
+mtem.firstChild.nodeValue=String.fromCharCode(160);
+}
+else {
+mtmp=document.all["Mx"+(m_copo[ycol]-101)+"y"+ycol];
+mtmp.innerHTML=String.fromCharCode(160);
+mtem=document.all["Mx"+(100+rows-m_copo[ycol]--)+"y"+ycol];
+mtem.innerHTML=String.fromCharCode(160);
+}
+setTimeout("zoomer("+ycol+")", speed);
+}
+}
+
+</script>
+
+</head>
+
+
+<body>
+
+	<center>
+<h1 class="neon">
+<script language="JavaScript1.2">
+var message="SANKALAN 2014"
+var neonbasecolor="gray"
+var neontextcolor="#63E3FD"
+var neontextcolor2="#89FBED"
+var flashspeed=90						// speed of flashing in milliseconds
+var flashingletters=2						// number of letters flashing in neontextcolor
+var flashingletters2=1						// number of letters flashing in neontextcolor2 (0 to disable)
+var flashpause=5						// the pause between flash-cycles in milliseconds
+
+var n=0
+if (document.all||document.getElementById){
+document.write('<font color="'+neonbasecolor+'">')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('</font>')
+}
+else
+document.write(message)
+
+function crossref(number){
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+return crossobj
+}
+
+function neon(){
+
+//Change all letters to base color
+if (n==0){
+for (m=0;m<message.length;m++)
+crossref(m).style.color=neonbasecolor
+}
+
+//cycle through and change individual letters to neon color
+crossref(n).style.color=neontextcolor
+
+if (n>flashingletters-1) crossref(n-flashingletters).style.color=neontextcolor2 
+if (n>(flashingletters+flashingletters2)-1) crossref(n-flashingletters-flashingletters2).style.color=neonbasecolor
+
+
+if (n<message.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",flashpause)
+return
+}
+}
+
+function beginneon(){
+if (document.all||document.getElementById)
+flashing=setInterval("neon()",flashspeed)
+}
+beginneon()
+
+
+</script></h1>
+
+
+
+
+<div id="matrix">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+
+<div class="sri"><br><h3>presents</h3>
+<h2>SRIJAN  vol. 4</h2></div>
+
+</center>
+
+
+
+
+
+		<div class="srijan_ka_container">	
+			
+			<div class="os-phrases" id="os-phrases">
+				<h2></h2>
+				<h2>An initiative</h2>
+				<h2>taken up by</h2>
+				<h2>the students of</h2>
+				<h2>D.U.C.S.</h2>
+				<h2>The Annual Magazine</h2>
+				<h2>SRIJAN vol 4</h2>
+				<h2>Coming Soon</h2>
+			</div>
+		</div>
+			
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.lettering.js"></script>
+
+
+		<script>
+			$(document).ready(function() {
+				$("#os-phrases > h2").lettering('words').children("span").lettering().children("span").lettering(); 
+			})
+		</script>
+
+
+<div class="copyrightg">
+ <p style="color:white;">Copyright &copy; Sankalan, Department of Computer Science, Delhi University 2014.</p>
+</div>
+
+	</body>
+	
+</html>

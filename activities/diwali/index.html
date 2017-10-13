@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<title>Hpy D-Wall-E</title>
+
+<style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Reenie+Beanie);
+html,body{height:106%;width:106%; overflow:hidden; cursor: progress;
+	font-family: 'Reenie Beanie', cursive;font-size:45px; font-style:italic;}
+ul,li{text-indent:0;text-decoration:none;margin:0;padding:0}
+img{border:0}
+body{background-color:#02166D;color:#999; }
+
+canvas{display:block;left:0;position:absolute;top:0;z-index:20}
+#header img{width:80%;}
+#bg img{width:100%; }
+#bg{position:fixed;z-index:10; top:-10px;}
+#header{position:relative; top:8%; left:10%; z-index:15; width:90%;}
+audio{position:fixed;top:5px;left:0;z-index:500; opacity:0.1;}
+a{background-color:rgba(255,255,255,0.7); text-decoration:none; border-radius:10px; padding-left:5px;padding-right:10px;}
+
+.marq{z-index:100; bottom:50px; position:fixed; color:orange; }
+.marq2{z-index:100; bottom:2px; position:fixed; font-size:25px; color:yellow; }
+.floating{
+    -webkit-animation-name: Floatingx;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-name: Floating;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+   
+}
+
+
+@-webkit-keyframes Floatingx{
+    from {-webkit-transform:translate(0, 0px);}
+    65% {-webkit-transform:translate(0, 10px);}
+    to {-webkit-transform: translate(0, -0px);    }    
+}
+    
+@-moz-keyframes Floating{
+    from {-moz-transform:translate(0, 0px);}
+    65% {-moz-transform:translate(0, 10px);}
+    to {-moz-transform: translate(0, -0px);}    
+}
+
+
+.scaling{
+   
+    -webkit-animation-name: scalex;
+    -webkit-animation-duration:3s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:ease-in-out;
+    -moz-animation-name: scale;
+    -moz-animation-duration:3s;
+    -moz-animation-iteration-count:infinite;
+    -moz-animation-timing-function:ease-in-out;
+}
+    
+    @-webkit-keyframes scalex{
+        from {-webkit-transform: scale(0.9);}
+        65% {-webkit-transform: scale(1.0);}
+        to {-webkit-transform: scale(0.9);}    
+    }
+        
+    @-moz-keyframes scale{
+        from {-moz-transform: scale(0.9);}
+        65% {-moz-transform: scale(1.0);}
+        to {-moz-transform: scale(0.9);}    
+    }
+#lyk:hover{
+	opacity: 1;
+
+}
+#lyk{
+	position:fixed; right:0.1%; opacity:0.2; display:block; z-index:100;
+}
+
+@media only screen and (min-width :800px) {
+	.sm-bg-dim { left:0;right:0; }
+	.sm-lyk-dim {top:40%;}
+}
+@media only screen and (min-width : 350px) and (max-width: 400px){
+	.sm-bg-dim { left: -1350px ; width: 600% }
+	.sm-lyk-dim {top: 85%}
+}
+@media only screen and (min-width : 320px) and (max-width: 349px) {
+	.sm-bg-dim {width: 550% ; left:-1100px }
+	.sm-lyk-dim {top: 85%}
+}
+
+</style>
+<script>
+function play(){
+       var audio = document.getElementById("odo");
+       audio.play();
+}
+</script>
+</head>
+<body onclick="play()">
+
+ <audio id="odo" preload="auto" controls >
+  <source src="./diwaali/diwali.mp3" type="audio/mpeg">
+  <source src="./diwaali/diwali.ogg" type="audio/ogg">
+  Your browser does not support the audio tag.
+</audio> 
+<audio preload="auto" autoplay>
+  <source src="./diwaali/hpy.mp3" type="audio/mpeg">
+  <source src="./diwaali/hpy.ogg" type="audio/ogg">
+</audio> 
+
+
+
+<div id="header"><img class="scaling" src="./diwaali/header.png"></div>
+<div id="bg" class="sm-bg-dim"><img id="bgimg" class="floating" src="./diwaali/bg.jpg"></div>
+
+<script src="./diwaali/jquery-2.1.0.min.js"></script>
+<script  src="./diwaali/diwali.js"></script>
+<marquee class="marq"  scrollamount="5" behavior="alternate" > ✪ ☺ Wish you all Happy & Safe Diwaali ☺ ✪ &nbsp;&nbsp;&nbsp;&nbsp;~ <a href="https://www.facebook.com/smi.dost">Smi</a>
+</marquee> 
+<canvas width="1360" height="634" ></canvas>
+
+<marquee class="marq2" scrollamount="9" onmouseover="this.stop()" onmouseout="this.start()"> Pataakhe fodne k liye kahi v click kare :p &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  CAUTION : Jyada Aatishbaajiya Krne Se Dikkat Ho Sakti H &nbsp;&nbsp;:p</marquee>
+
+<span Id="lyk" class="sm-lyk-dim">
+<iframe style="width:310px;height:280px;" src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com/pages/Smi/1482935178592788&amp;layout=box_count&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp" scrolling="no" frameborder="0" allowTransparency="true"><a href="http://www.addlikebutton.net">addlikebutton.net</a><style>closemap"init"if=fb_connect-start="25"check_bandwith</style></iframe>
+</span>
+</body></html>

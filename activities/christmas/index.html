@@ -1,0 +1,227 @@
+<html>
+<head>
+<title>Merry Christmas</title>
+<link rel="stylesheet" media="screen" href="christmaslights.css" />
+<script type="text/javascript" src="soundmanager2-nodebug-jsmin.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.6.0/build/yahoo-dom-event/yahoo-dom-event.js&2.6.0/build/animation/animation-min.js"></script>
+<script type="text/javascript" src="christmaslights.js"></script>
+
+<script type="text/javascript">
+var urlBase = './';
+soundManager.url = './';
+
+</script>
+
+<!-- snow -->
+<style type="text/css">
+
+#snow-target {
+ /**
+  * absolute-positioned example, snow is appended to this element.
+  * overflow: hidden is recommended for best effect.
+  */
+ position: relative;
+ /*background: #445566;*/
+ overflow: hidden;
+ _zoom: 5; /* IE 6 display fix */
+}
+</style>
+
+<script type="text/javascript" src="snowstorm.js"></script>
+
+<script type="text/javascript">
+snowStorm.snowColor = '#fff';
+snowStorm.targetElement = 'snow-target';
+
+</script>
+
+<script type="text/javascript">
+	
+
+
+</script>
+<style type="text/css">
+	#A1{
+		right:0px;
+		bottom:0.5%;
+		position: absolute;
+		z-index: 9999999;
+	}
+	#A2{
+		right:0px;
+		bottom: 10%;
+		position: absolute;
+		z-index: 9999999;		
+	}
+	button{
+		/*right:5%;*/
+		bottom: 6%;
+		position: absolute;
+		z-index: 9999999;
+	}
+
+#lyk:hover{
+	opacity: 1;
+
+}
+#lyk{
+	position:fixed; top:52.5%; left:0.5%; opacity:0.2; display:block;
+
+}
+
+</style>
+
+</head>
+
+<body id="snow-target">
+<button onclick="onlyA1();"
+ style="right:31%;bottom:2%;position:absolute;z-index:99999999;background-color:yellow;height:40px;border-radius:5px;border-color:red">Say...</button>
+<button onclick="onlyA2();"
+ style="right:23%;bottom:2%;position:absolute;z-index:99999999;background-color:green;height:40px;border-radius:5px;border-color:yellow;">Can't say...</button>
+<button onclick="pauseAll();"
+ style="right:15%;bottom:2%;position:absolute;z-index:99999999;background-color:red;height:40px;border-radius:5px;border-color:green;">Don't say...</button>
+
+ <audio id="A1" autoplay preload>
+  <source src="cats.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+
+
+<audio id="A2" preload>
+  <source src="fart.mp3" type="audio/mpeg">
+</audio> 
+
+
+<script type="text/javascript">
+function pauseAll() {
+	document.getElementById("A2").pause();
+	document.getElementById("A1").pause();
+}function onlyA1() {
+	document.getElementById("A2").pause();
+	document.getElementById("A1").play();
+}
+function onlyA2() {
+	document.getElementById("A1").pause();
+	document.getElementById("A2").play();
+}
+</script>
+
+
+
+<!--  snow flakes-->
+<script type="text/javascript"> 
+  //Configure below to change URL path to the snow image
+  var snowsrc="snow.gif"
+  // Configure below to change number of snow to render
+  var no = 10;
+  // Configure whether snow should disappear after x seconds (0=never):
+  var hidesnowtime = 0;
+  // Configure how much snow should drop down before fading ("windowheight" or "pageheight")
+  var snowdistance = "pageheight";
+
+///////////Stop Config//////////////////////////////////
+
+  var ie4up = (document.all) ? 1 : 0;
+  var ns6up = (document.getElementById&&!document.all) ? 1 : 0;
+
+	function iecompattest(){
+	return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+	}
+
+  var dx, xp, yp;    // coordinate and position variables
+  var am, stx, sty;  // amplitude and step variables
+  var i, doc_width = 800, doc_height = 600; 
+  
+  if (ns6up) {
+    doc_width = self.innerWidth;
+    doc_height = self.innerHeight;
+  } else if (ie4up) {
+    doc_width = iecompattest().clientWidth;
+    doc_height = iecompattest().clientHeight;
+  }
+
+  dx = new Array();
+  xp = new Array();
+  yp = new Array();
+  am = new Array();
+  stx = new Array();
+  sty = new Array();
+  snowsrc=(snowsrc.indexOf("dynamicdrive.com")!=-1)? "snow.gif" : snowsrc
+  for (i = 0; i < no; ++ i) {  
+    dx[i] = 0;                        // set coordinate variables
+    xp[i] = Math.random()*(doc_width-50);  // set position variables
+    yp[i] = Math.random()*doc_height;
+    am[i] = Math.random()*20;         // set amplitude variables
+    stx[i] = 0.02 + Math.random()/10; // set step variables
+    sty[i] = 0.7 + Math.random();     // set step variables
+		if (ie4up||ns6up) {
+      if (i == 0) {
+        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><a href=\"http://dynamicdrive.com\"><img src='"+snowsrc+"' border=\"0\"><\/a><\/div>");
+      } else {
+        document.write("<div id=\"dot"+ i +"\" style=\"POSITION: absolute; Z-INDEX: "+ i +"; VISIBILITY: visible; TOP: 15px; LEFT: 15px;\"><img src='"+snowsrc+"' border=\"0\"><\/div>");
+      }
+    }
+  }
+
+  function snowIE_NS6() {  // IE and NS6 main animation function
+    doc_width = ns6up?window.innerWidth-10 : iecompattest().clientWidth-10;
+		doc_height=(window.innerHeight && snowdistance=="windowheight")? window.innerHeight : (ie4up && snowdistance=="windowheight")?  iecompattest().clientHeight : (ie4up && !window.opera && snowdistance=="pageheight")? iecompattest().scrollHeight : iecompattest().offsetHeight;
+    for (i = 0; i < no; ++ i) {  // iterate for every dot
+      yp[i] += sty[i];
+      if (yp[i] > doc_height-50) {
+        xp[i] = Math.random()*(doc_width-am[i]-30);
+        yp[i] = 0;
+        stx[i] = 0.02 + Math.random()/10;
+        sty[i] = 0.7 + Math.random();
+      }
+      dx[i] += stx[i];
+      document.getElementById("dot"+i).style.top=yp[i]+"px";
+      document.getElementById("dot"+i).style.left=xp[i] + am[i]*Math.sin(dx[i])+"px";  
+    }
+    snowtimer=setTimeout("snowIE_NS6()", 10);
+  }
+
+	function hidesnow(){
+		if (window.snowtimer) clearTimeout(snowtimer)
+		for (i=0; i<no; i++) document.getElementById("dot"+i).style.visibility="hidden"
+	}
+		
+
+if (ie4up||ns6up){
+    snowIE_NS6();
+		if (hidesnowtime>0)
+		setTimeout("hidesnow()", hidesnowtime*1000)
+		}
+
+</script>
+<!--  -->
+<div>
+
+ <div id="loading">
+ <center>
+  <h1>Keep Calm</h1>
+<h4>&</h4>
+  <h2>Let it load..</h2>
+ </center>
+ </div>
+
+ <div id="lights">
+  <!-- lights go here -->
+ </div>
+
+
+
+
+ <div style="position:absolute;bottom:3.5%;left:10px; font-size:20px" >
+  <a href="?size=pico">pico</a> | <a href="?size=tiny">tiny</a> | <a href="?size=small">small</a> | <a href="?size=medium">medium</a> | <a href="?size=large">large</a> | <a onclick="document.location.reload(true);" style="cursor:pointer"> Install new lights</a>
+ </div>
+
+
+<span Id="lyk" >
+<iframe style="width:310px;height:280px;" src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com/pages/Smi/1482935178592788&amp;layout=box_count&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp" scrolling="no" frameborder="0" allowTransparency="true"><a href="http://www.addlikebutton.net">addlikebutton.net</a><style>closemap"init"if=fb_connect-start="25"check_bandwith</style></iframe>
+</span>
+</div>
+
+</body>
+</html>

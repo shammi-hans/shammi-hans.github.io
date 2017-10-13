@@ -1,0 +1,119 @@
+/*--------- slider ---------*/
+
+
+.slider {
+	position: relative;
+	display: block;
+	width:230px;
+	height:300px;
+	margin:15px 0 0 0;
+	position:absolute;
+	z-index:2
+}
+.items {
+	display:none;
+}
+
+
+.sprev {
+    padding: 4px 0 0 10px;
+    text-transform: uppercase;
+	display:block;
+	width:115px;
+	height:27px;
+	background:url(../images/fbprev.jpg) no-repeat;
+	position:absolute;
+	z-index:15;
+	top:250px;
+	left:0px;
+	font-weight:bold;
+	text-align:left;
+	color:#fff;
+	text-decoration:none;
+}
+	.sprev:hover {
+		color:#9eb52c
+	}
+.snext {
+    padding: 4px 0 0 78px;
+    text-transform: uppercase;
+	display:block;
+	width:117px;
+	height:27px;
+	background:url(../images/fbnext.jpg) no-repeat;
+	position:absolute;
+	z-index:15;
+	top:250px;
+	left:115px;
+	font-weight:bold;
+	text-align:left;
+	color:#fff;
+	text-decoration:none;
+}
+	.snext:hover {
+		color:#9eb52c
+	}
+.progbar {
+	background:#342822;
+	width:100%;
+	height:2px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	z-index:6;
+}
+/*-------- end slider -----------*/
+
+/*----------- preset ---------*/
+#option {
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+#options input[type=text] {
+	background:#CCC;
+	width:50px;
+	border:1px solid #000;
+	text-align:center;
+}
+#options span {
+	display:inline-block;
+	width:100px;
+	font-size:14px;
+	color:#000;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+#options select {
+	font-size:14px;
+	width:150px;
+	color:#000;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	background:#CCC;
+	border:1px solid #000;
+}
+#options select option {
+	background:#CCC;
+}
+label {
+	display:inline-block;
+	height:30px;
+}
+.preset1 {
+	color:#000;
+	height:40px;
+}
+#get_opt {
+	margin-left:100px;
+	line-height:1.2307em;
+}
+.col-1 {
+	float:left;
+	width:400px;
+	padding-right:50px
+}
+* + html .min {
+	min-height:45px;
+}
+.col-2 {
+	float:left;
+	width:400px;
+}
+/*-------- end preset -------*/

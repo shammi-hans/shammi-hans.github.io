@@ -1,0 +1,44 @@
+[26-Feb-2014 19:37:44] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: Access denied for user 'sankalan'@'localhost' (using password: NO) in /home/sankalan/public_html/Main/backend/sankalan_m.php on line 28
+[26-Feb-2014 19:37:44] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: A link to the server could not be established in /home/sankalan/public_html/Main/backend/sankalan_m.php on line 28
+[26-Feb-2014 19:37:44] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: Access denied for user 'sankalan'@'localhost' (using password: NO) in /home/sankalan/public_html/Main/backend/sankalan_m.php on line 29
+[26-Feb-2014 19:37:44] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: A link to the server could not be established in /home/sankalan/public_html/Main/backend/sankalan_m.php on line 29
+[26-Feb-2014 19:37:44] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: Access denied for user 'sankalan'@'localhost' (using password: NO) in /home/sankalan/public_html/Main/backend/sankalan_m.php on line 31
+[26-Feb-2014 19:37:44] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: A link to the server could not be established in /home/sankalan/public_html/Main/backend/sankalan_m.php on line 31
+[26-Feb-2014 19:37:48] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: Access denied for user 'sankalan'@'localhost' (using password: NO) in /home/sankalan/public_html/Main/backend/sankalan_m.php on line 28
+[26-Feb-2014 19:37:48] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: A link to the server could not be established in /home/sankalan/public_html/Main/backend/sankalan_m.php on line 28
+[26-Feb-2014 19:37:48] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: Access denied for user 'sankalan'@'localhost' (using password: NO) in /home/sankalan/public_html/Main/backend/sankalan_m.php on line 29
+[26-Feb-2014 19:37:48] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: A link to the server could not be established in /home/sankalan/public_html/Main/backend/sankalan_m.php on line 29
+[26-Feb-2014 19:37:48] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: Access denied for user 'sankalan'@'localhost' (using password: NO) in /home/sankalan/public_html/Main/backend/sankalan_m.php on line 31
+[26-Feb-2014 19:37:48] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: A link to the server could not be established in /home/sankalan/public_html/Main/backend/sankalan_m.php on line 31
+[28-Feb-2014 00:11:57] PHP Warning:  include(./backend/dbconn.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/backend/user_options.php on line 3
+[28-Feb-2014 00:11:57] PHP Warning:  include(./backend/dbconn.inc) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/backend/user_options.php on line 3
+[28-Feb-2014 00:11:57] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening './backend/dbconn.inc' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sankalan/public_html/Main/backend/user_options.php on line 3
+[28-Feb-2014 13:06:03] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 13:06:05] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 13:17:42] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 13:22:07] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 13:22:09] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 13:40:15] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 13:46:45] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 13:46:48] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 14:37:11] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 14:37:15] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 14:39:09] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 17:30:55] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 17:33:37] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 18:34:14] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 18:34:16] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 20:31:53] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 20:33:36] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 20:35:25] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 20:37:00] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 20:38:08] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 20:38:09] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 20:42:14] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 20:42:16] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 20:48:17] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 20:49:18] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 20:49:19] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 21:49:31] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 21:50:00] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246
+[28-Feb-2014 21:51:36] PHP Parse error:  syntax error, unexpected T_STRING in /home/sankalan/public_html/Main/backend/regis_complete.php on line 246

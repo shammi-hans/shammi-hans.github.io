@@ -1,0 +1,31 @@
+[26-Feb-2014 19:15:50] PHP Warning:  include(./backend/drawcaptcha.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/register.php on line 9
+[26-Feb-2014 19:15:50] PHP Warning:  include(./backend/drawcaptcha.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/register.php on line 9
+[26-Feb-2014 19:15:50] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening './backend/drawcaptcha.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sankalan/public_html/Main/register.php on line 9
+[26-Feb-2014 19:15:50] PHP Fatal error:  Call to undefined function  drawcaptcha() in /home/sankalan/public_html/Main/register.php on line 66
+[26-Feb-2014 19:16:54] PHP Warning:  include(./backend/drawcaptcha.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/register.php on line 9
+[26-Feb-2014 19:16:54] PHP Warning:  include(./backend/drawcaptcha.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/register.php on line 9
+[26-Feb-2014 19:16:54] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening './backend/drawcaptcha.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sankalan/public_html/Main/register.php on line 9
+[26-Feb-2014 19:16:54] PHP Fatal error:  Call to undefined function  drawcaptcha() in /home/sankalan/public_html/Main/register.php on line 66
+[28-Feb-2014 00:49:58] PHP Parse error:  syntax error, unexpected '}' in /home/sankalan/public_html/Main/myPage.php on line 80
+[28-Feb-2014 00:50:23] PHP Parse error:  syntax error, unexpected '}' in /home/sankalan/public_html/Main/myPage.php on line 80
+[28-Feb-2014 00:51:19] PHP Parse error:  syntax error, unexpected '}' in /home/sankalan/public_html/Main/myPage.php on line 80
+[28-Feb-2014 00:51:46] PHP Parse error:  syntax error, unexpected '}' in /home/sankalan/public_html/Main/myPage.php on line 81
+[28-Feb-2014 00:52:11] PHP Parse error:  syntax error, unexpected '}' in /home/sankalan/public_html/Main/myPage.php on line 81
+[28-Feb-2014 00:52:49] PHP Parse error:  syntax error, unexpected '}' in /home/sankalan/public_html/Main/myPage.php on line 81
+[03-Mar-2014 17:46:47] PHP Parse error:  syntax error, unexpected T_ARRAY, expecting ')' in /home/sankalan/public_html/Main/sponsors.php on line 15
+[03-Mar-2014 17:47:11] PHP Parse error:  syntax error, unexpected T_ARRAY, expecting ')' in /home/sankalan/public_html/Main/sponsors.php on line 15
+[08-Mar-2014 07:03:45] PHP Warning:  include(register.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/indexx.php on line 493
+[08-Mar-2014 07:03:45] PHP Warning:  include(register.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/indexx.php on line 493
+[08-Mar-2014 07:03:45] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'register.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sankalan/public_html/Main/indexx.php on line 493
+[08-Mar-2014 07:05:21] PHP Warning:  include(register.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/indexx.php on line 493
+[08-Mar-2014 07:05:21] PHP Warning:  include(register.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/indexx.php on line 493
+[08-Mar-2014 07:05:21] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'register.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sankalan/public_html/Main/indexx.php on line 493
+[08-Mar-2014 07:06:58] PHP Parse error:  syntax error, unexpected '<' in /home/sankalan/public_html/Main/indexx.php on line 339
+[08-Mar-2014 07:07:22] PHP Warning:  include(register.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/indexx.php on line 496
+[08-Mar-2014 07:07:22] PHP Warning:  include(register.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/indexx.php on line 496
+[08-Mar-2014 07:07:22] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'register.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sankalan/public_html/Main/indexx.php on line 496
+[08-Mar-2014 07:07:41] PHP Warning:  include(register.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/indexx.php on line 496
+[08-Mar-2014 07:07:41] PHP Warning:  include(register.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory in /home/sankalan/public_html/Main/indexx.php on line 496
+[08-Mar-2014 07:07:41] PHP Warning:  include() [<a href='function.include'>function.include</a>]: Failed opening 'register.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sankalan/public_html/Main/indexx.php on line 496
+[10-Mar-2014 13:34:06] PHP Parse error:  syntax error, unexpected T_DEC in /home/sankalan/public_html/Main/indexx.php on line 520
+[10-Mar-2014 13:35:08] PHP Parse error:  syntax error, unexpected '>', expecting T_STRING or T_VARIABLE or '$' in /home/sankalan/public_html/Main/indexx.php on line 514

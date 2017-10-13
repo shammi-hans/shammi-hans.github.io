@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en"><head>
+	<title>Casting</title>
+
+	<style>
+
+* { padding: 0; margin: 0; }
+
+body, html
+{
+	font-family: 'Audiowide', cursive;
+
+	width: 100%;
+	height: 100%;
+	font-weight: 500;
+	color: #ff6;
+	background-color: transparent;
+	/*background-color: black;*/
+	overflow: hidden;
+		
+}
+textarea *[contenteditable=true]{
+	user-select: none;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-o-user-select: none;
+				-ms-user-select: none;
+} 
+p#start
+{
+	position: relative;
+	width: 20em;
+	font-size: 200%;
+	font-weight: 400;
+	margin: 20% auto;
+	color: #4ee;
+	opacity: 0;
+	z-index: 1;
+	-webkit-animation: intro 2s ease-out;
+	-moz-animation: intro 2s ease-out;
+	-ms-animation: intro 2s ease-out;
+	-o-animation: intro 2s ease-out;
+	animation: intro 2s ease-out;
+}
+
+@-webkit-keyframes intro {
+	0% { opacity: 1; }
+	90% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+@-moz-keyframes intro {
+	0% { opacity: 1; }
+	90% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+@-ms-keyframes intro {
+	0% { opacity: 1; }
+	90% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+@-o-keyframes intro {
+	0% { opacity: 1; }
+	90% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+@keyframes intro {
+	0% { opacity: 1; }
+	90% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+h1
+{
+	position: absolute;
+	width: 10.5em;
+	left: 5%;
+	top: 60%;
+	font-size: 10em;
+	text-align: center;
+	margin-left: -1.3em;
+	line-height: 0.8em;
+	letter-spacing: -0.05em;
+	color: #000;
+	text-shadow: -2px -2px 0 #ff6, 2px -2px 0 #ff6, -2px 2px 0 #ff6, 2px 2px 0 #ff6;
+	opacity: 0;
+	z-index: 1;
+	-webkit-animation: logo 5s ease-out 2.5s;
+	-moz-animation: logo 5s ease-out 2.5s;
+	-ms-animation: logo 5s ease-out 2.5s;
+	-o-animation: logo 5s ease-out 2.5s;
+	animation: logo 5s ease-out 2.5s;
+}
+
+h1 sub
+{
+	display: block;
+	font-size: 0.3em;
+	letter-spacing: 0;
+	line-height: 0.8em;
+}
+
+@-webkit-keyframes logo {
+	0% { -webkit-transform: scale(1); opacity: 1; }
+	50% { opacity: 1; }
+	100% { -webkit-transform: scale(0.1); opacity: 0; }
+}
+
+@-moz-keyframes logo {
+	0% { -moz-transform: scale(1); opacity: 1; }
+	50% { opacity: 1; }
+	100% { -moz-transform: scale(0.1); opacity: 0; }
+}
+
+@-ms-keyframes logo {
+	0% { -ms-transform: scale(1); opacity: 1; }
+	50% { opacity: 1; }
+	100% { -ms-transform: scale(0.1); opacity: 0; }
+}
+
+@-o-keyframes logo {
+	0% { -o-transform: scale(1); opacity: 1; }
+	50% { opacity: 1; }
+	100% { -o-transform: scale(0.1); opacity: 0; }
+}
+
+@keyframes logo {
+	0% { transform: scale(1); opacity: 1; }
+	50% { opacity: 1; }
+	100% { transform: scale(0.1); opacity: 0; }
+}
+
+/* the interesting 3D scrolling stuff */
+#titles
+{
+	position: absolute;
+	width: 18em;
+	height: 50em;
+	bottom: 0;
+	left: 50%;
+	margin-left: -9em;
+	font-size: 350%;
+	text-align: center;
+	overflow: hidden;
+	-webkit-transform-origin: 50% 100%;
+	-moz-transform-origin: 50% 100%;
+	-ms-transform-origin: 50% 100%;
+	-o-transform-origin: 50% 100%;
+	transform-origin: 50% 100%;
+	-webkit-transform: perspective(300px) rotateX(45deg);
+	-moz-transform: perspective(300px) rotateX(45deg);
+	-ms-transform: perspective(300px) rotateX(45deg);
+	-o-transform: perspective(300px) rotateX(45deg);
+	transform: perspective(300px) rotateX(45deg);
+}
+
+#titles:after
+{
+	position: absolute;
+	content: ' ';
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 30%;
+	background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.2) 0%, transparent 100%);
+	background-image: -moz-linear-gradient(top, rgba(0,0,0,0.2) 0%, transparent 100%);
+	background-image: -ms-linear-gradient(top, rgba(0,0,0,0.2) 0%, transparent 100%);
+	background-image: -o-linear-gradient(top, rgba(0,0,0,0.2) 0%, transparent 100%);
+	background-image: linear-gradient(top, rgba(0,0,0,0.2) 0%, transparent 100%);
+	pointer-events: none;
+}
+
+#titles p
+{
+	text-align: center;
+	/*margin: 0.8em 0;*/
+}
+
+#titles p.center
+{
+	text-align: center;
+	max-width:100%;
+}
+
+#titles h2
+{
+	color: #ff6;
+	text-decoration: underline;
+}
+
+#titlecontent
+{
+	position: absolute;
+	top: 100%;
+	-webkit-animation: scroll 75s linear 4s infinite;
+	-moz-animation: scroll 15s linear 4s infinite;
+	-ms-animation: scroll 75s linear 4s infinite;
+	-o-animation: scroll 75s linear 4s infinite;
+	animation: scroll 25s linear 4s infinite;
+}
+
+/* animation */
+@-webkit-keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -170%; }
+}
+
+@-moz-keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -170%; }
+}
+
+@-ms-keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -170%; }
+}
+
+@-o-keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -170%; }
+}
+
+@keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -170%; }
+}
+
+
+</style>
+<script type="text/javascript">
+	function hide(){
+		document.getElementById('cast').style.display="none";
+		setTimeout(showcast,2500);
+		function showcast(){
+			document.getElementById('cast').style.display="block";
+		}
+
+	}
+</script>
+	<body onclick="hide()" id="cast">
+
+<h1>SANKALAN 2014<sub>Organizers</sub></h1>
+
+<div id="titles"><div id="titlecontent">
+<h2>Sankalan Panel Members</h2>
+	<p class="center">
+						Kirti Khandelwal (President)
+						<br>Manish Kumar (Secretary)
+						<br>Tanu Garg (Treasurer)
+						<br>Jyoti Balwani (Vice President)
+						<br>Shailender Rajput (Joint Secretary)
+	</p>
+	<br>
+	<h2>Website Team</h2>
+	<p>
+Swatantra Verma
+<br>Manish Kumar
+<br>Shammi Hans
+<br>Manisha Wadhwa
+<br>Avni Jindal
+	</p>
+<p>	
+<h2>Junior Coordinators</h2>
+	Aakanksha Sureka
+<br>Akriti Gupta
+<br>Akshay Dhingra
+<br>Alisha
+<br>Alka Saha
+<br>Amit Anand
+<br>Anshul Aggarwal
+<br>Anup Kumar
+<br>Arushi Dhunna
+<br>Ashish Kumar Aggarwal
+<br>Ashish Yadav
+<br>Avanish Verma
+<br>Barkha Khatri
+<br>Barkha Shree
+<br>Bharti
+<br>Bhawna Singla
+<br>Charu Aggarwal
+<br>Deepak Saini
+<br>Deepanka
+<br>Deepika Goel
+<br>Deepika Yadav
+<br>Diksha Gandhi
+<br>Divya Nigam
+<br>Fondaliza Sophon
+<br>Garima Gupta
+<br>Gunjan Rani
+<br>Heena Dhankani
+<br>Himanshu Mehta
+<br>Himanshu Verma
+<br>Indrajeet Verma
+<br>Isha Singhal
+<br>Jojo Vanlalchanchinmawia Ralte
+<br>Jyoti Chopra
+<br>Jyoti Kumari
+<br>Kajal
+<br>Kanchan Sati
+<br>Kanika
+<br>Kanishka
+<br>Kannu Chawla
+<br>Karishma
+<br>Kham Muanding Tonsing
+<br>Kishan
+<br>Kriti Gupta
+<br>Lokita Yadav
+<br>Mamta
+<br>Mangte Seikthang Kom
+<br>Manish Vishwakarma
+<br>Mansi Gera
+<br>Manu Sharma
+<br>Megha Bansal
+<br>Mehak
+<br>Mohit
+<br>Monika Aggarwal
+<br>Mrinali Yadav
+<br>Muskan Dhanda
+<br>Neelam Rohilla
+<br>Neha Singh
+<br>Nikita Chopra
+<br>Palak Ahuja
+<br>Pankaj Pushp Sah
+<br>Radhika Dhingra
+<br>Raghvendra Mishra
+<br>Rahul Jajoria
+<br>Ranjana Jatav
+<br>Ravi Shankaar mehta
+<br>Ravikant
+<br>Ritu Yadav
+<br>Rohit Arora
+<br>Ruchika Garg
+<br>Sachin Sharma
+<br>Sandeep Kumar
+<br>Shalin Sharma
+<br>Shipra Kanojia
+<br>Shivangi Rastogi
+<br>Shivani Tyagi
+<br>Shruti Singhal
+<br>Shweta Sharma
+<br>Smita Goel
+<br>Somesh Kumar
+<br>Stuti Mittal
+<br>Sunil Bamber
+<br>Sushmita
+<br>Swapnil Kumar Jha
+<br>Tamanna Gupta
+<br>Tulika Kumari
+<br>Tusharika Dewan
+<br>Ujjwal
+<br>Upasana Kumar
+<br>Urmila Kumari
+<br>Vandana Jain
+<br>Vikas Bek
+<br>Vineet Kumar
+<br>Vishakha
+<br>Vishal Bhama
+<br>Yogesh Kumari
+<br>Zamiram	
+<p>
+	& all the
+<h2>Junior Coordinators</h2>
+	Congratulations to all organizers
+</p>
+</div></div>
+
+
+	</body>

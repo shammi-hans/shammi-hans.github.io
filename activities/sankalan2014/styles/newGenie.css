@@ -1,0 +1,30 @@
+/*.appear{
+	-moz-animation-name: appear;
+    -moz-animation-duration: 2s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+
+	-webkit-animation-name: appear;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+
+	animation-name: appear;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+}
+
+
+@-webkit-keyframes appear { 
+    0%{
+    	width: 0px;
+    }
+    50%{
+    	width: 
+    }
+}
+.disapear{
+
+}*/

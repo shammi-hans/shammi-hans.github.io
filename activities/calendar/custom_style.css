@@ -1,0 +1,145 @@
+.body {
+
+  color: #000;
+
+}
+
+footer {
+
+  bottom: 0px;
+
+
+
+}
+
+.cl-week {
+
+  display: flex;
+
+  text-align: center;
+
+  font-weight: bold;
+
+}
+
+.cl-day{
+
+  width:70px;
+
+  height: 60px;
+
+  color: #000;
+
+  border: 1px solid #ccc;
+
+}
+
+textarea.cl-day{
+
+  border: none!important;
+
+  width: 70px;
+
+  height: 40px;
+
+}
+
+.cl-day-event {
+
+  background: rgba(253, 177, 102, 0.5) none repeat scroll 0 0;
+
+  display: none;
+
+  font-size: 12px;
+
+  font-weight: bolder;
+
+  height: 40px;
+
+  padding: 15px 0 0;
+
+  text-align: center;
+
+  width: 70px;
+
+}
+
+.cl-date{
+
+  float: right;
+
+  color: #000;
+
+}
+
+.cl-dayText {
+
+  font-size: 10px;
+
+  float: left;
+
+}
+
+.cl-hide{
+
+  display: none;
+
+}
+
+.cl-txt-center  {
+
+  text-align: center;
+
+}
+
+.cl-ml-mr-auto {
+
+  margin-left: auto;
+
+  margin-right: auto;
+
+}
+
+.cl-month-header {
+
+  position: relative;
+
+  margin-left: auto;
+
+  margin-right: auto;
+
+  text-align: center;
+
+  background: powderblue none repeat scroll 0% 0%;
+
+  width: 40%;
+
+  height: 20px;
+
+  padding: 5px 0;
+
+}
+
+td:hover {
+
+  cursor: pointer;
+
+  background: #B0E5CB;
+
+}
+
+tr:first-child, .cl-disabled, .cl-disabled:hover {
+
+  background-color: #F6F6F6!important;
+
+  cursor: default;
+
+}
+
+h3 {
+
+  margin: -20px 0 10px 0;
+
+}
+
+.cl-today {color: red;}

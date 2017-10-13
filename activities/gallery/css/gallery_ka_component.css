@@ -1,0 +1,374 @@
+@import url(http://fonts.googleapis.com/css?family=Audiowide);
+
+.copyrightg p { 
+	position:fixed; bottom:1.5px; width:100%; text-align:center; margin-bottom: 1.5px; font-family: arial, cursive;
+	color:#696969; z-index:99;  font-size: 13px; -moz-border-radius: 12px; -webkit-border-radius: 12px; border-radius: 12px;
+	}
+ 
+
+.photo_wala {
+	background: #ddd; /* background: none;*/
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+}
+
+.js .photo_wala {
+	height: 550px;
+}
+
+.photo_wala-start {
+	cursor: pointer;
+}
+
+/* Wrapper and figures */
+
+.photo_wala > div {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.photo_wala figure {
+	width: 320px;
+	height: 340px;
+	position: relative;
+	display: inline-block;
+	background: #BFDBDA; 
+	padding: 20px;
+	text-align: center;
+	margin: 5px;
+}
+.photo_wala figure a{
+	background: #BFDBDA;
+
+}
+.photo_wala figure p{
+	position: absolute;
+	display: inline-block;
+	color:#111111;
+	padding: 0px 0px;
+	text-align: left;
+	margin: 5px;
+	font-family: 'Audiowide', cursive;
+}
+
+.js .photo_wala figure {
+	position: absolute;
+	display: block;
+	margin: 0;
+}
+
+.photo_wala figcaption h2 {
+	margin: 25px 0 0 0;
+	color: #a7a0a2;
+	font-size: 16px;
+}
+
+.photo_wala-img {
+	outline: none;
+	display: block;
+
+
+	background: #f9f9f9;
+}
+
+.photo_wala-back {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #fff;
+	font-family: 'Audiowide', cursive;
+	color: #a7a0a2;
+	padding: 50px 40px;
+	text-align: left;
+	font-size: 22px;
+	line-height: 1.25;
+}
+
+.photo_wala-back p {
+	margin: 0;
+}
+
+.photo_wala-back p span {
+	text-decoration: line-through;
+}
+
+/* Navigation dots */
+.photo_wala nav {
+	position: absolute;
+	width: 100%;
+	bottom: 35px;
+	z-index: 90;
+	text-align: center;
+	left: 0;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.photo_wala-start nav {
+	opacity: 0;
+}
+ 
+.photo_wala nav span {
+	position: relative;
+	display: inline-block;
+	margin: 0 5px;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background: #aaa;
+	border-radius: 50%;
+	text-align: center;
+	-webkit-transition: -webkit-transform 0.6s ease-in-out, background 0.3s;
+	transition: transform 0.6s ease-in-out, background 0.3s;
+	-webkit-transform: scale(0.48);
+	transform: scale(0.48);
+}
+
+.photo_wala nav span:last-child {
+	margin-right: 0;
+}
+
+.photo_wala nav span::after {
+	content: "Click";
+	
+	font-size: 80%;
+	speak: none;
+	display: inline-block;
+	vertical-align: center;
+	font-style: normal;
+	font-weight: thin;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 30px;
+	color: #fff;
+	opacity: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.photo_wala nav span.current {
+	background: #888;
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.photo_wala nav span.current.flip {
+	-webkit-transform: scale(1) rotateY(-180deg) translateZ(-1px);
+	transform: scale(1) rotateY(-180deg) translateZ(-1px);
+	background: #555;
+}
+
+.photo_wala nav span.flippable::after {
+	opacity: 1;
+	-webkit-transition-delay: 0.4s;
+	transition-delay: 0.4s;
+}
+
+/* Overlays */
+
+/* Initial overlay on photo_wala container */
+.js .photo_wala::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	top: 0;
+	left: 0;
+	z-index: 100;
+	-webkit-transition: opacity 0.3s, visibility 0s 0.3s;
+	transition: opacity 0.3s, visibility 0s 0.3s;
+}
+
+.js .photo_wala-start::before {
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+/* Button on photo_wala container */
+.js .photo_wala::after {
+	border-radius: 10px 10px 10px 10px;
+	content: 'Let\'s Have A Look' ;
+	font-family: 'Audiowide', cursive;
+	font-weight: 400;
+	position: absolute;
+	border: 3px solid #fff;
+	text-align: center;
+	white-space: nowrap;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translateY(-50%) translateX(-50%);
+	transform: translateY(-50%) translateX(-50%);
+	padding: 10px 20px;
+	color: #fff;
+	/*text-transform: uppercase;*/
+	letter-spacing: 1px;
+	cursor: pointer;
+	z-index: 101;
+}
+
+.js .photo_wala::before,
+.js .photo_wala::after {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.js .photo_wala-start::before,
+.js .photo_wala-start:hover::after,
+.touch .photo_wala-start::after  {
+	opacity: 1;
+
+	visibility: visible;
+}
+
+/* Overlay on figure */
+.photo_wala figure::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	visibility: visible;
+	opacity: 1;
+	background: rgba(0,0,0,0.05);
+	-webkit-transition: opacity 0.6s;
+	transition: opacity 0.6s;
+}
+
+/* Hide figure overlay when it becomes current */
+figure.photo_wala-current::after {
+	-webkit-transition: opacity 0.6s, visibility 0s 0.6s;
+	transition: opacity 0.6s, visibility 0s 0.6s;
+	opacity: 0;
+	visibility: hidden;
+}
+
+/* Special classes for transitions and perspective */
+.photo_wala-transition figure {
+	-webkit-transition: -webkit-transform 0.6s ease-in-out;
+	transition: transform 0.6s ease-in-out;
+}
+
+.photo_wala-perspective {
+	-webkit-perspective: 1800px;
+	perspective: 1800px;
+}
+
+.photo_wala-perspective > div,
+.photo_wala-perspective figure {
+	-webkit-transform-style: preserve-3d;
+	-webkit-display:inline;
+	transform-style: preserve-3d;
+	-ms-display:inline;
+}
+
+.photo_wala-perspective figure,
+.photo_wala-perspective figure div {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.photo_wala-perspective figure.photo_wala-flip {
+	-webkit-transform-origin: 0% 50%;
+	transform-origin: 0% 50%;
+}
+
+.csstransformspreserve3d figure.photo_wala-flip .photo_wala-back {
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	display: block;
+}
+
+.no-csstransformspreserve3d figure.photo_wala-showback .photo_wala-back {
+	display: block;
+	/*for no css*/
+	content: 'Plz use updated browsers like Mozilla Firefox.' ;
+	font-family: 'Audiowide', cursive;
+	font-weight: 400;
+	position: absolute;
+	border: 3px solid #fff;
+	text-align: center;
+	white-space: nowrap;
+	left: 50%;
+	top: 50%;
+	/*******/
+}
+
+/* The no-JS fallback look does not need to be boring ;) */
+.no-js .photo_wala figure {
+	box-shadow: -2px 2px 0 rgba(0,0,0,0.05);
+		/*for no css*/
+	content: 'Plz use updated browsers like Mozilla Firefox.' ;
+	font-family: 'Audiowide', cursive;
+	font-weight: 400;
+	position: absolute;
+	border: 3px solid #fff;
+	text-align: center;
+	white-space: nowrap;
+	left: 50%;
+	top: 50%;
+	/*******/
+}
+
+.no-js .photo_wala figure::after {
+	display: none;
+		/*for no css*/
+	content: 'Plz use updated browsers like Mozilla Firefox.' ;
+	font-family: 'Audiowide', cursive;
+	font-weight: 400;
+	position: absolute;
+	border: 3px solid #fff;
+	text-align: center;
+	white-space: nowrap;
+	left: 50%;
+	top: 50%;
+	/*******/
+}
+
+.no-js .photo_wala figure:nth-child(3n) {
+	-webkit-transform: translateX(-10%) rotate(5deg);
+	transform: translateX(-10%) rotate(5deg);
+		/*for no css*/
+	content: 'Plz use updated browsers like Mozilla Firefox.' ;
+	font-family: 'Audiowide', cursive;
+	font-weight: 400;
+	position: absolute;
+	border: 3px solid #fff;
+	text-align: center;
+	white-space: nowrap;
+	left: 50%;
+	top: 50%;
+	/*******/
+}
+
+.no-js .photo_wala figure:nth-child(3n-2) {
+	-webkit-transform: translateY(10%) rotate(-3deg);
+	transform: translateY(10%) rotate(-3deg);
+		/*for no css*/
+	content: 'Plz use updated browsers like Mozilla Firefox.' ;
+	font-family: 'Audiowide', cursive;
+	font-weight: 400;
+	position: absolute;
+	border: 3px solid #fff;
+	text-align: center;
+	white-space: nowrap;
+	left: 50%;
+	top: 50%;
+	/*******/
+}
+
+#photo_wala-1 nav span.current {
+	background: #888;
+	-webkit-transform: scale(0.61);
+	transform: scale(0.61);
+}

@@ -1,0 +1,266 @@
+<html><head>
+
+<link rel="stylesheet" type="text/css" media="screen" href="./styles/eventstyle.css"> <!-- box wrapping n event-ka-pix Ctrl -->
+
+
+<script type="text/javascript" src="./scripts/events_rot_circle.js"></script>
+<script type="text/javascript" src="./scripts/jquery.min.js"></script>
+
+<script type="text/javascript">
+  function display_click_me(element,number)
+  {
+    switch(element.className){
+    case "client-page roundabout-moveable-item roundabout-in-focus": var click=document.getElementById("click_me"+number); click.style.visibility="visible";break;
+  }
+  }
+
+  function hide_click_me(element,number)
+  {
+    switch(element.className){
+    case "client-page roundabout-moveable-item roundabout-in-focus": var click=document.getElementById("click_me"+number); click.style.visibility="hidden";break;
+  }
+  }
+
+  function events_info(element,number)
+  {
+      parent.scroll();
+
+
+    // if(element.className.search("roundabout-in-focus")!==-1)
+    // {
+    //     parent.go(number);
+    // }
+    // else
+    // {
+      var selected=0;
+      var array=document.getElementsByTagName('li');
+        for(i=0;i<array.length;i++)
+        {
+           ++selected;
+          if(array[i].className.search("roundabout-in-focus")!==-1)
+          {
+            break;
+          }
+        }
+        // alert(number + "" + selected);
+          parent.go(number,selected);
+    // }
+  }
+</script>
+
+
+<style>
+  .client-page p
+  {
+    margin:5px 15px;padding:0;position:absolute;font-size:15px;color:#fff;top:40px;visibility:hidden;
+  }
+
+  ul li p{
+    display: none;
+  }
+</style>
+
+
+</head>
+<body onload="event_start()">
+
+<div id="main_wrapper">
+  <div id="wrapper">
+    
+    <div id="container">
+      <div class="icon_wala_menu">
+       
+       <div style="width:150px;margin:0 auto;text-align:center; display: none;">
+          <p style="color:#fff;margin:0;padding:0" id="event_title"></p>
+      </div>
+
+        <h1 id="hero" class="site-section">
+
+         
+          <ul class="roundabout-holder" style="padding: 0px; position: relative;" id="event-ka-pix">
+            
+            <!--Java Juggling-->
+            <li style="position: absolute; left: 644px; top: 0px; width: 70px; height: 70px; opacity: 0.55; z-index: 145; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="Java Juggling" onmouseover="display_click_me(this,1)" onmouseout="hide_click_me(this,1)" onclick="events_info(this,1)">
+              <p id="click_me1"> Click For More Info </p>
+              <img src="./images/events_icons/java.png" alt="" sty style="cursor:pointer;">
+            </li>
+
+            <!--Spin A Web-->
+            <li style="position: absolute; left: -115px; top: 0px; width: 70px; height: 70px; opacity: 0.55; z-index: 50; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="Spin A Web" onmouseover="display_click_me(this,2)" onmouseout="hide_click_me(this,2)" onclick="events_info(this,2)">
+            
+              <p id="click_me2"> Click For More Info </p>
+            
+              <img src="./images/events_icons/web.png" alt="" style="cursor:pointer;">
+            </li>
+            
+
+            <!-- Brain Spark -->
+            <li style="position: absolute; left: -115px; top: 0px; width: 70px; height: 70px; opacity: 0.55; z-index: 145; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="Brain Spark" onmouseover="display_click_me(this,3)" onmouseout="hide_click_me(this,3)" onclick="events_info(this,3)">
+             <p id="click_me3"> Click For More Info </p>
+             
+              <img src="./images/events_icons/logic.png" alt="" style="cursor:pointer;" >
+            </li>
+            
+
+            <!--Code-A-thon-->
+            <li style="position: absolute; left: -115px; top: 0px; width: 100px; height: 80px; opacity: 0.55; z-index: 145; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="Code-A-Thon" onmouseover="display_click_me(this,4)" onmouseout="hide_click_me(this,4)" onclick="events_info(this,4)">
+             <p id="click_me4"> Click For More Info </p>
+             
+              <img src="./images/events_icons/code.png" alt="" style="cursor:pointer;" >
+            </li>
+            
+            <!-- Texpert -->
+            <li style="position: absolute; left: -115px; top: 0px; width: 70px; height: 70px; opacity: 0.55; z-index: 145; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="TeXpert" onmouseover="display_click_me(this,5)" onmouseout="hide_click_me(this,5)" onclick="events_info(this,5)">
+             <p id="click_me5"> Click For More Info </p>
+             
+              <img src="./images/events_icons/tex.png" alt="" style="cursor:pointer;"  >
+            </li>
+            
+            <!-- Algorithms -->
+            <li style="position: absolute; left: -115px; top: 0px; width: 70px; height: 70px; opacity: 0.55; z-index: 145; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="Algoholics" onmouseover="display_click_me(this,6)" onmouseout="hide_click_me(this,6)" onclick="events_info(this,6)">
+             <p id="click_me6"> Click For More Info </p>
+             
+              <img src="./images/events_icons/algo.png" alt="" style="cursor:pointer;" >
+            </li>
+            
+
+            <!--Techno Speak-->
+            <li style="position: absolute; left: 644px; top: 0px; width: 70px; height: 70px; opacity: 0.55; z-index: 145; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="Techno Speak" onmouseover="display_click_me(this,7)" onmouseout="hide_click_me(this,7)" onclick="events_info(this,7)">
+             <p id="click_me7"> Click For More Info </p>
+             
+            <img src="./images/events_icons/techno.png" alt="" style="cursor:pointer;" >
+            </li>
+            
+
+            <!-- Mind Spark -->
+            <li style="position: absolute; left: 644px; top: 0px; width: 70px; height: 70px; opacity: 0.55; z-index: 145; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="Mind Matters" onmouseover="display_click_me(this,8)" onmouseout="hide_click_me(this,8)" onclick="events_info(this,8)">
+             <p id="click_me8"> Click For More Info </p>
+             
+            <img src="./images/events_icons/mind.png" alt="" style="cursor:pointer;" >
+            </li>
+            
+
+            <!-- Sprint -->
+            <li style="position: absolute; left: 644px; top: 0px; width: 70px; height: 70px; opacity: 0.55; z-index: 145; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="Sprint" onmouseover="display_click_me(this,9)" onmouseout="hide_click_me(this,9)" onclick="events_info(this,9)">
+             <p id="click_me9"> Click For More Info </p>
+             
+            <img src="./images/events_icons/sprint.png" alt="" style="cursor:pointer;" >
+            </li>
+
+            <!-- Select * From Brain -->
+            <li style="position: absolute; left: 644px; top: 0px; width: 70px; height: 70px; opacity: 0.55; z-index: 145; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="Select * From Brain" onmouseover="display_click_me(this,10)" onmouseout="hide_click_me(this,10)" onclick="events_info(this,10)">
+             <p  id="click_me10"> Click For More Info </p>
+             
+              <img src="./images/events_icons/select.png" alt="" style="cursor:pointer;" >
+            </li>
+
+            <!-- Debug++ -->
+            <li style="position: absolute; left: 644px; top: 0px; width: 70px; height: 70px; opacity: 0.55; z-index: 145; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="Debug++" onmouseover="display_click_me(this,11)" onmouseout="hide_click_me(this,11)" onclick="events_info(this,11)">
+             <p id="click_me11"> Click For More Info </p>
+             
+              <img src="./images/events_icons/debug.png" alt="" style="cursor:pointer;" >
+            </li>
+
+            <!-- Android App -->
+            <li style="position: absolute; left: 644px; top: 0px; width: 70px; height: 70px; opacity: 0.55; z-index: 145; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="Make App" onmouseover="display_click_me(this,12)" onmouseout="hide_click_me(this,12)" onclick="events_info(this,12)">
+             <p id="click_me12"> Click For More Info </p>
+             
+              <img src="./images/events_icons/app.png" alt="" style="cursor:pointer;" >
+            </li>
+
+            <!-- LAN Gaming -->
+            <li style="position: absolute; left: 644px; top: 0px; width: 70px; height: 70px; opacity: 0.55; z-index: 145; font-size: 10px;text-align:center" class="client-page roundabout-moveable-item" title="Kill'em all" onmouseover="display_click_me(this,13)" onmouseout="hide_click_me(this,13)" onclick="events_info(this,13)">
+             <p id="click_me13"> Click For More Info </p>
+             
+              <img src="./images/events_icons/lan.png" alt="" style="cursor:pointer;" >
+            </li>
+
+            <!-- Just A Minute -->
+            <li style="position: absolute; left: 199px; top: -82px; width: 70px; height: 70px; opacity: 1; z-index: 280; font-size: 13px;text-align:center" class="client-page roundabout-moveable-item roundabout-in-focus" title="Just A Minute" onmouseover="display_click_me(this,14)" onmouseout="hide_click_me(this,14)" onclick="events_info(this,14)">
+             <p  id="click_me14"> Click For More Info </p>
+             
+              <img src="./images/events_icons/jam.png" alt="" style="cursor:pointer;" >
+            </li>
+
+            <!-- Turncoat -->
+             <li style="position: absolute; left: 199px; top: -82px; width: 70px; height: 70px; opacity: 1; z-index: 280; font-size: 13px;text-align:center" class="client-page roundabout-moveable-item roundabout-in-focus" title="Turncoat" onmouseover="display_click_me(this,15)" onmouseout="hide_click_me(this,15)" onclick="events_info(this,15)">
+              <p id="click_me15"> Click For More Info </p>
+             
+            <img src="./images/events_icons/turncoat.png" alt="" style="cursor:pointer;" >
+            </li>
+
+            <!-- 3D Poster -->
+            <!-- <li style="position: absolute; left: 199px; top: -82px; width: 70px; height: 70px; opacity: 1; z-index: 280; font-size: 13px;text-align:center" class="client-page roundabout-moveable-item roundabout-in-focus" title="3D Poster" onmouseover="display_click_me(this,16)" onmouseout="hide_click_me(this,16)" onclick="events_info(this,16)">
+             <p id="click_me16"> Click For More Info </p>
+             
+              <img src="./images/events_icons/3dposter.png" alt="" style="cursor:pointer;" >
+            </li> -->
+
+            <!--Chakravyuh-->
+            <li style="position: absolute; left: 199px; top: -82px; width: 70px; height: 70px; opacity: 1; z-index: 280; font-size: 13px;text-align:center" class="client-page roundabout-moveable-item roundabout-in-focus" title="Chakravyuh" onmouseover="display_click_me(this,17)" onmouseout="hide_click_me(this,17)" onclick="events_info(this,17)">
+             <p id="click_me17"> Click For More Info </p>
+             
+            <img src="./images/events_icons/chakra.png" alt="" style="cursor:pointer;"  >
+            </li>
+
+            <!--Race to Mars-->
+            <li style="position: absolute; left: 199px; top: -82px; width: 70px; height: 70px; opacity: 1; z-index: 280; font-size: 13px;text-align:center" class="client-page roundabout-moveable-item roundabout-in-focus" title="roBOLT" onmouseover="display_click_me(this,18)" onmouseout="hide_click_me(this,18)" onclick="events_info(this,18)">
+             <p id="click_me17"> Click For More Info </p>
+             
+            <img src="./images/events_icons/raceToMars.png" alt="" style="cursor:pointer;"  >
+            </li>
+
+            <!--Space Elevator-->
+            <!-- <li style="position: absolute; left: 199px; top: -82px; width: 70px; height: 70px; opacity: 1; z-index: 280; font-size: 13px;text-align:center" class="client-page roundabout-moveable-item roundabout-in-focus" title="Chakravyuh" onmouseover="display_click_me(this,19)" onmouseout="hide_click_me(this,19)" onclick="events_info(this,19)">
+             <p id="click_me17"> Click For More Info </p>
+             
+            <img src="./images/events_icons/poleClimb.png" alt="" style="cursor:pointer;"  >
+            </li> -->
+
+          </ul>
+        </h1>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+
+
+<script type="text/javascript" src="./scripts/events_rot_process.js"></script>
+<script type="text/javascript">
+
+
+  function event_start()
+   {
+
+    // $("#main_wrapper").css("width", viewportwidth);
+    parent.resizeGenie($("#main_wrapper"));
+    //golgol control
+     var maxRotations = 10; /*total rotations= auto rotation+clicked rotations */
+     var abhikaRotations = 0; /*base no. of rotations*/
+  
+    var golgol = $('#event-ka-pix');
+   
+    golgol.roundabout({
+      tilt : -4,
+      minScale : 0.3,
+      autoplay : false,
+      autoplayInitialDelay : 500, /*to begin rotations*/
+      autoplayDuration : 1999000, /*interval btwn 2 slides*/
+      autoplayPauseOnHover : true,
+    duration: 1000 /*speed of sliding*/
+    });
+  
+  golgol.on("animationEnd", function() 
+    {
+      abhikaRotations++;
+      if(maxRotations==abhikaRotations)
+      {
+        golgol.roundabout("stopAutoplay");
+      }
+    });
+  }
+</script>
+
+</body></html>

@@ -1,0 +1,14 @@
+
+
+.fb-drpdwn {
+ 	border-radius: 3px;
+    	height: 28px;
+    	width: 110px;
+	margin-bottom: 10px;
+}
+.fb-plyr-div {
+	left: 0;
+	position: absolute;
+	top: -150px;
+	width: 100px;
+}

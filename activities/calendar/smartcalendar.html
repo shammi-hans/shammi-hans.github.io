@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>Calendar | Author: Shammi</title>
+  <link rel="stylesheet" type="text/css" href="custom_style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="jquery-1.9.1.js"> </script>
+<script src="custom_script.js"> </script>
+<script type="text/javascript">
+      function handleClientLoad() {
+        // Loads the client library and the auth2 library together for efficiency.
+        // Loading the auth2 library is optional here since `gapi.client.init` function will load
+        // it if not already loaded. Loading it upfront can save one network request.
+        gapi.load('client:auth2', initClient);
+      }
+
+      function initClient() {
+        // Initialize the client with API key and People API, and initialize OAuth with an
+        // OAuth 2.0 client ID and scopes (space delimited string) to request access.
+        gapi.client.init({
+            apiKey: '8OuvIYR-0Sojt4kxI7cbZS4x',
+            discoveryDocs: ["https://people.googleapis.com/$discovery/rest?version=v1"],
+            clientId: '147691703394-i7blsc8cq71tpda8equ00s57qqtperuc.apps.googleusercontent.com',
+            scope: 'profile'
+        }).then(function () {
+          // Listen for sign-in state changes.
+          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+          // Handle the initial sign-in state.
+          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+        });
+      }
+
+      function updateSigninStatus(isSignedIn) {
+        // When signin status changes, this function is called.
+        // If the signin status is changed to signedIn, we make an API call.
+        if (isSignedIn) {
+          makeApiCall();
+        }
+      }
+
+      function handleSignInClick(event) {
+        // Ideally the button should only show up after gapi.client.init finishes, so that this
+        // handler won't be called before OAuth is initialized.
+        gapi.auth2.getAuthInstance().signIn();
+      }
+
+      function handleSignOutClick(event) {
+        gapi.auth2.getAuthInstance().signOut();
+      }
+
+      function makeApiCall() {
+        // Make an API call to the People API, and print the user's given name.
+        gapi.client.people.people.get({
+          'resourceName': 'people/me',
+          'requestMask.includeField': 'person.names'
+        }).then(function(response) {
+          console.log('Hello, ' + response.result.names[0].givenName);
+        }, function(reason) {
+          console.log('Error: ' + reason.result.error.message);
+        });
+      }
+    </script>
+    <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
+</head>
+<body>
+	<h2 class="cl-txt-center">Calendar </h2>
+	<h3 class="cl-txt-center"><sub>Save Your Events In One Go!!</sub></h3>
+    <button id="jq-signin-button" onclick="handleSignInClick()">Sign In</button>
+    <button id="jq-signout-button" class="cl-hide" onclick="handleSignOutClick()">Sign Out</button>
+
+  <div class="cl-month-header">
+    <select class="j-curr-month"></select>
+    <select class="j-curr-year"></select>
+  </div>
+  <div class="j-calendar">
+  </div>
+  <footer class="cl-month-header"><marquee direction="both">Google Calender Integration to save events is under construction.</marquee></footer>
+</body>
+<script>
+function start() {
+  // 2. Initialize the JavaScript client library.
+  gapi.client.init({
+    'apiKey': '8OuvIYR-0Sojt4kxI7cbZS4x',
+    'clientId': '147691703394-i7blsc8cq71tpda8equ00s57qqtperuc.apps.googleusercontent.com',
+    'scope': 'profile',
+  }).then(function() {
+    // 3. Initialize and make the API request.
+    return gapi.client.request({
+      'path': 'https://people.googleapis.com/v1/people/me?requestMask.includeField=person.names',
+    })
+  }).then(function(response) {
+    console.log(response.result);
+  }, function(reason) {
+    console.log('Error: ' + reason.result.error.message);
+  });
+};
+// 1. Load the JavaScript client library.
+//gapi.load('client', start);
+</script>
+    
+</html>

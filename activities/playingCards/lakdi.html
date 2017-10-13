@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+
+
+
+   <!--- Basic Page Needs
+
+   ================================================== -->
+
+  <meta charset="utf-8">
+
+	<title>Shammi Hans</title>
+
+	<meta name="description" content="">
+
+	<meta name="author" content="">
+
+
+
+   <!-- Mobile Specific Metas
+
+   ================================================== -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+	<!-- CSS
+
+    ================================================== 
+
+   <link rel="stylesheet" href="../../css/animate.css"> -->
+
+   <link rel="stylesheet" href="../../css/magnific-popup.css">
+
+   <link rel="stylesheet" href="../css/activity.css">
+   <link rel="stylesheet" href="../css/lakdi.css">
+
+    <link rel="stylesheet" href="../css/menu.css">
+
+   
+
+   <!-- Script
+
+   ================================================== -->
+
+	<script src="../../js/modernizr.js"></script>
+
+	<script src="../js/angular1.5.5.min.js"></script>
+
+	<script src="../../js/jquery-2.1.1.min.js"></script>
+
+	<script src="../../js/jquery-migrate.js"></script>
+
+   <!-- Favicons
+
+	================================================== -->
+
+	<link rel="shortcut icon" href="../../yinyan.gif">
+
+	
+
+</head>
+
+
+
+<body  ng-app="bindLakdi" class="bodyBg day-mode" id="main-container" style="overflow:hidden">
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '141369013091383',
+      xfbml      : true,
+      autoLogAppEvents : true,
+      version    : 'v2.9'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div id="fb-root"></div>
+
+
+<nav id="left-nav">
+
+
+
+        <div class="logo" >
+
+        <a href="../../index.html">
+
+          <img alt="image loading" src="../../images/avatar.jpg">
+
+        </a>
+
+        </div>
+
+</nav>
+
+<ul class="menu" id="menu2">
+
+    <li tabindex="0">
+
+      Menu
+
+	      <ul class="submenu helix">
+
+	        <li><span class="" id="toggleMode" night="false">Night Mode</span></li>
+
+	        <li><a id="saveScreen" on-click="captureFullPage();">Save screenshot</a></li>
+
+	        <li><span id="totScore">Calculate Again</span></li>
+
+	      </ul>
+
+	</li>
+
+</ul>
+
+
+
+
+
+<div style="display: none;z-index:20" id="stary">
+
+	<iframe style="position:absolute; z-index:-100; top:0px;left:0px; width:100%; height:100%;" scrolling="no" marginheight="0" marginwidth="0" src="../../stary.html" frameborder="0"></iframe>
+
+ </div>
+
+ <div id="mask" style="position: absolute; top: 0; left: 0; background: black; display: none;z-index:10"></div>
+
+
+ <input placeholder="" value="" type="hidden"> 
+
+<div ng-controller="LakdiController" class="controllerDiv">
+
+	<div class="lhsDiv" >
+
+	  <div class="hoverRules th-input">PLAYERS <i class="fa fa-info-circle" aria-hidden="true"></i>
+
+</div>
+			
+			<div class="j-rank th-input">
+
+				<img src="" class="win-img top1" index="1" alt=""/>
+				<select ng-hide="(fBplayerListObj.length == 0)" class="fb-drpdwn jq-fb-drpdwn" index="1" ng-model="plyr1"
+				 ng-options="plyr1 as plyr1.name for plyr1 in fBplayerList" ng-change="player1change(plyr1, 1)">
+				</select>
+				<input placeholder="Player 1" type="text" ng-model="player1" class="w-80 name" index="1"/>
+
+				<input type="text" placeholder="Score" index="1" class="plyr w-40"/>
+
+			</div>
+
+			<div class="j-rank th-input">
+
+				<img src="" class="win-img top2" index="2" alt=""/>
+				<select ng-hide="(fBplayerListObj.length == 0)" class="fb-drpdwn jq-fb-drpdwn" index="2" ng-model="plyr2"
+				 ng-options="plyr2 as plyr2.name for plyr2 in fBplayerList" ng-change="player2change(plyr2, 2)">
+				</select>
+				<input placeholder="Player 2" type="text" ng-model="player2" class="w-80 name" index="2"/>
+
+				<input type="text" placeholder="Score" index="2" class="plyr w-40"/>
+
+			</div>
+
+			<div class="j-rank th-input">
+
+				<img src="" class="win-img top3" index="3" alt=""/>
+				<select ng-hide="(fBplayerListObj.length == 0)" class="fb-drpdwn jq-fb-drpdwn" index="3" ng-model="plyr3"
+				 ng-options="plyr3 as plyr3.name for plyr3 in fBplayerList" ng-change="player3change(plyr3, 3)">
+				</select>
+				<input placeholder="Player 3" type="text" ng-model="player3" class="w-80 name" index="3"/>
+
+				<input type="text" placeholder="Score" index="3" class="plyr w-40"/>
+
+			</div>
+
+			<div class="j-rank th-input">
+
+				<img src="" class="win-img top4" index="4" alt=""/>
+				<select ng-hide="(fBplayerListObj.length == 0)" class="fb-drpdwn jq-fb-drpdwn" index="4" ng-model="plyr4"
+				 ng-options="plyr4 as plyr4.name for plyr4 in fBplayerList" ng-change="player4change(plyr4, 4)">
+				</select>
+				<input placeholder="Player 4" type="text" ng-model="player4" class="w-80 name" index="4"/>
+
+				<input type="text" placeholder="Score" index="4" class="plyr w-40"/>
+
+			</div>
+
+			<div style="position:absolute; left: -20px;" class="jq-fb-friend-div">
+				<div class="fb-plyr-div fb-color fb-msg-login th-input">
+					<div ng-show="(fBplayerListObj.length == 0)" >
+						<img src="../images/fbloader.gif" alt="loading" width="30"><br/>
+						Either you are not logged in via FB or none of your FB friends have allowed the app <b> Smi bot</b>.</div>
+					</div>	
+				<div ng-hide="(fBplayerListObj.length == 0)" class="jq-select-fb-friends fb-friends-sel">
+				<span class="jq-fb-select">Select FB friends</span>
+				<span class="jq-fb-done hide">Done</span>
+				</div>
+				</div>
+			</div>
+
+	<div class="rhsDiv" >
+
+		<div class="th-input hoverRules">Hover to see the rules..
+
+				<label class="rules">Lakdi is game of playing card. More than 3 players can play together.After seeing the card divided equally to every player,each need to tell the estimated number of hands they can made. If they fails then they get LAKDI means negative point(-10 times).<br/> <span> Eg: If Estimate = 3, Scored = 2, then Points = -30 <br/>
+
+				If Estimate = 3, Scored = 3, then Points = 3x10 = 30 <br/>
+
+				If Estimate = 3, Scored = 4, then Points = (3x10) + (4-3) = 31</span> <br/>
+
+				One can opt BLIND5 without seeing the received cards. RISK: The score increases/decreases by 20 times. Last round is mostly a BLIND5 play for all, if decided by team-members.</label>
+
+		</div>
+
+				
+
+		<div class="j-input4 th-input" title="Modify the value">
+
+			<label class="labelMH">Minimum Hands</label>
+
+			<input type="text" id="minHand" value="3" placeholder="Minimum Hand" class="minH num">
+
+		</div>
+
+		<div class="j-input4 th-input maxiHand" enable="true" title="Click to disable or enable or modify the value">
+
+			<img src="../images/door.png" id="door">
+
+			<label class="labelMH">Extra Hands</label>
+
+			<input type="text" id="maxHand" value="2" placeholder="Extra Hand" class="minH num">
+
+		</div>
+
+		<div class="j-input4 th-input">
+
+			<input type="button" value="Add round" id="play1more"/>
+
+			<input type="button" value="Del round" id="del1row"/>
+
+			<input type="hidden" id="blind" value="5" placeholder="Blind value" class="w-40 num">
+
+		</div>
+
+<div id="fb-div" >
+	<div id="status"></div>
+	<div class="fb-login-button" data-scope="public_profile, email, user_friends" data-width="150px" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="true" data-auto-logout-link="true" data-use-continue-as="true"></div>
+<div class="fb-like" data-share="true" data-width="150" data-show-faces="true" width: 190px!important; display: inline-flex!important></div>
+</div>
+ 
+	</div>
+
+	
+
+	<div class="white-table">
+
+		<div class="top-header">
+
+			 <div class="tab" style="float: left"> Offline Lakdi <span id="reset">Reset</span></div> 
+
+			 <div class="tab tab-2"> Online Lakdi [on a public server] <span>coming soon..</span> </div> 
+
+			 <div>&nbsp; </div>
+
+
+
+			 <div class="tab" style="float: left"> Estimates </div>
+
+			 <div class="tab"> Scores </div> 
+
+			 <div class="tab-name-div j-tab-name-div hide">
+
+		 		 <div class="tab name name-l"> 
+
+		 			<div class="w-45"> &nbsp; </div>
+
+	 		 		<div class="j-player1 name-tabs" index="1" ng-bind-template="{{player1}}"></div>
+
+					<div class="j-player2 name-tabs" index="2" ng-bind-template="{{player2}}"></div>
+
+					<div class="j-player3 name-tabs" index="3" ng-bind-template="{{player3}}"></div>
+
+					<div class="j-player4 name-tabs" index="4" ng-bind-template="{{player4}}"></div>
+
+					
+
+		 		 </div> 
+
+		  		 <div class="tab name name-r">
+
+		  		 		
+
+		  		 		<div class="j-player1 name-tabs" ng-bind-template="{{player1}}"></div>
+
+						<div class="j-player2 name-tabs" ng-bind-template="{{player2}}"></div>
+
+						<div class="j-player3 name-tabs" ng-bind-template="{{player3}}"></div>
+
+						<div class="j-player4 name-tabs" ng-bind-template="{{player4}}"></div>
+
+						
+
+		  		 </div> 
+
+	  		 </div>
+
+		<div class="tab-div" id="tabDiv">
+
+		<table>
+
+			<tbody id="tbody">
+
+				<tr>
+
+					<th class="j-player1 j-player" index="1" ng-bind-template="{{player1}}"></th>
+
+					<th class="j-player2 j-player" index="2" ng-bind-template="{{player2}}"></th>
+
+					<th class="j-player3 j-player" index="3" ng-bind-template="{{player3}}"></th>
+
+					<th class="j-player4 j-player" index="4" ng-bind-template="{{player4}}"></th>
+
+					<th class=""></th>
+
+					<th class="j-player1" ng-bind-template="{{player1}}"></th>
+
+					<th class="j-player2" ng-bind-template="{{player2}}"></th>
+
+					<th class="j-player3" ng-bind-template="{{player3}}"></th>
+
+					<th class="j-player4" ng-bind-template="{{player4}}"></th>
+
+					<th> &nbsp; </th>
+
+				</tr>
+
+					<tr id="firstRow" class="row" index="0" title="Round 1">
+
+					  <td>
+
+					  <span class="roundNum" title="Round 1">1</span>
+
+					   <input value="" placeholder="min hand" class="est num" index="1" pIndex="0" title="Double click to play BLIND 5"></td>
+
+					  <td> <input value="" placeholder="min hand" class="est num" index="2" pIndex="0" title="Double click to play BLIND 5"></td>
+
+					  <td> <input value="" placeholder="min hand" class="est num" index="3" pIndex="0" title="Double click to play BLIND 5"></td>
+
+					  <td> <input value="" placeholder="min hand" class="est num" index="4" pIndex="0" title="Double click to play BLIND 5"></td>
+
+					  <td> <input value="0" disabled="true" style="opacity:0" class="totHand w-15"></td>
+
+					  <td> <input value="" placeholder="min hand" class="score num" index="1" pIndex="0"></td>
+
+					  <td> <input value="" placeholder="min hand" class="score num" index="2" pIndex="0"></td>
+
+					  <td> <input value="" placeholder="min hand" class="score num" index="3" pIndex="0"></td>
+
+					  <td> <input value="" placeholder="min hand" class="score num" index="4" pIndex="0"></td>
+
+					  <td> <input value="0" disabled="true" style="opacity:0" class="totScore w-15"></td>
+
+					  <td> <button style="margin-left:20px" class="calcScore" pIndex="0" title="Click to calculate & double-click to enable">Calc</button></td>
+
+					</tr>
+
+					<tr id="firstRow-0" class="row" style="display:none" index="1" title="Round ">
+
+					  <td>
+
+					  <span class="roundNum" title="Round "></span>
+
+					  <input value="" placeholder="min hand" class="est num" index="1" pIndex="1" title="Double click to play BLIND 5"></td>
+
+					  <td> <input value="" placeholder="min hand" class="est num" index="2" pIndex="1" title="Double click to play BLIND 5"></td>
+
+					  <td> <input value="" placeholder="min hand" class="est num" index="3" pIndex="1" title="Double click to play BLIND 5"></td>
+
+					  <td> <input value="" placeholder="min hand" class="est num" index="4" pIndex="1" title="Double click to play BLIND 5"></td>
+
+					  <td> <input value="0" disabled="true" style="opacity:0" class="totHand w-15"></td>
+
+					  <td> <input value="" placeholder="min hand" class="score num" index="1" pIndex="1"></td>
+
+					  <td> <input value="" placeholder="min hand" class="score num" index="2" pIndex="1"></td>
+
+					  <td> <input value="" placeholder="min hand" class="score num" index="3" pIndex="1"></td>
+
+					  <td> <input value="" placeholder="min hand" class="score num" index="4" pIndex="1"></td>
+
+					  <td> <input value="0" disabled="true" style="opacity:0" class="totScore w-15"></td>
+
+					  <td> <button style="margin-left:20px" class="calcScore" pIndex="1" title="Click to calculate & double-click to enable">Calc</button></td>
+
+					</tr>
+
+				</tbody>
+
+			</table>
+
+			</div>
+
+		</div>
+
+	</div>
+
+<div id="hiddenCanvas" style="position:fixed;left:9%;top:90%;">
+
+	 <canvas id="myCanvas" width="1300" height="600" style="display:block;"></canvas>
+
+</div>
+
+<div id="hiddenCanvas2" style="position:fixed;left:9%;top:90%;">
+
+	
+
+</div>
+
+	<!-- <div id="loader"><center>Loading..<div class="bubbles"><span></span><span id="bubble2"></span><span id="bubble3"></span></div></center></div> -->
+
+
+
+</div>
+
+ 
+
+<script src="../js/lakdi.js"></script>
+
+<script src="../js/html2canvas.js"></script>
+
+<script src="../js/jquery-1.11.3-jquery.min.js"></script>
+
+
+
+</body>
+
+</html>
+
+
+
+<!--
+
+lakdi for player in row 
+
+Night mode submenu for stop stars
+
+
+
+-->

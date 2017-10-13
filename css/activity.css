@@ -1,0 +1,132 @@
+
+/* ------------------------------------------------------------------ */
+/* 1. lakdi.html
+/* ------------------------------------------------------------------ */
+body {
+	background:#000;
+	color: #fff;
+}
+.controllerDiv {
+	padding:2px;
+}
+.top-header{
+	position: relative; margin-left: auto; margin-right: auto; width: 70%;
+}
+.rhsDiv{
+	position: absolute; color: #fff; text-align: center; top: 25%; right:10px; max-width:200px;
+}
+.lhsDiv{
+	position: absolute; color: #fff; text-align: center; top: 25%; left:10px; max-width:200px;
+}
+.white-table {
+	display: block;
+	
+}
+.th-input{
+	padding:5px;
+}
+.th-input input{
+	  padding: 5px;
+    text-align: center;
+}
+
+.tab{
+	 float: left;
+    text-align: center;
+    width: 50%;
+}
+
+td {
+	border-collapse:collapse;border-spacing:0;margin:0px auto;
+}
+td input{
+	padding: 2px;
+    text-align: center;
+    width: 65px !important;
+}
+
+.tab-2 span {
+	display:none;
+}
+.tab-2:hover >span{
+	display:inline-table;
+}
+
+.labelMH{
+	position: absolute; color: red; padding:5px; left: 15%;
+}
+.minH{
+	background: transparent; color: #fff;z-index: 100;height: 30px; padding: 20px 5px 2px 5px!important;
+}
+
+/*shake css*/
+.shake {
+  animation: shake 0.9s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+/* end of shake css */
+
+.w-80{
+	width:80px!important;
+}
+.w-40{
+	width:40px!important;
+}
+.rules {
+	background: #acefdc none repeat scroll 0 0;
+    border-radius: 5px;
+    color: #000;
+    display: none;
+    padding: 5px;
+    position: absolute;
+    right: 2%;
+    text-align: center;
+    top: 20%;
+    width: 300px;
+    z-index: 10;
+	
+}
+.hoverRules{
+	background: turquoise none repeat scroll 0 0;
+	border-radius:3px;
+	margin:5px 0;
+}
+.rhsDiv .hoverRules{
+	 cursor: pointer;
+}
+.rhsDiv .hoverRules:hover>.rules{
+	display:block;
+}
+.maxiHand , .maxiHand >label, .maxiHand >input{
+	cursor:pointer;
+}
+
+#door{
+	position: absolute; height: 58px; z-index: 10; display: none; width: 150px; left:7%; top:51%;
+	
+}
+
+
+/* ------------------------------------------------------------------ */
+/*		end of 	lakdi.html
+/* ------------------------------------------------------------------ */

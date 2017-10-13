@@ -1,0 +1,42 @@
+.pages{
+	position:absolute;
+	background-color: white;
+	z-index: 100;
+	/*display: none;*/
+
+}
+
+#events { top:20000px; left:20000px }
+#home  { top:15000px; left:30000px }
+#about   { top:5000px;  left:5000px  }
+#sponsors{ top:25000px; left:35000px }
+  #with   { top:30000px; left:40000px }
+
+
+.neonPage{
+
+  color: #00fcff;
+  text-shadow: 2px 1px 2px #67C8FF;
+  padding:20px;
+
+  text-align: center;
+
+  border-color: #67C8FF;
+  border: 2px solid;
+  border-radius: 5px;
+
+  background-color: rgba(0,0,0,0);
+  background-image: -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   100%, hsla(0,0%,100%, .1) 100%);
+
+  -webkit-user-select: none; /* Chrome/Safari */        
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+ */
+
+/* Rules below not implemented in browsers yet */
+-o-user-select: none;
+user-select: none;
+}
+
+.events{
+  left:1px;
+}
