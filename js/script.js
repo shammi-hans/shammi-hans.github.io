@@ -16,13 +16,12 @@ $(window).load(function(){
 /*----------------------------------------------------*/
 /* Initializing jQuery Nice Scroll
 ------------------------------------------------------ */
-
-    $("html").niceScroll({
-      cursorcolor:"#11abb0", // Set cursor color
-      cursorwidth: "8", // Sety cursor width
-      cursorborder: "", // Set cursor border color, default left none
-	  cursoropacitymin: "0.2"
-	});
+$("html").niceScroll({
+    cursorcolor:"#11abb0", // Set cursor color
+    cursorwidth: "8", // Sety cursor width
+    cursorborder: "", // Set cursor border color, default left none
+  cursoropacitymin: "0.2"
+});
 
 
 /*----------------------------------------------------*/
@@ -206,16 +205,19 @@ function parallax() {
 
 /*----------------------------------------------------*/
 /*  Google Map
-------------------------------------------------------*/
+/* Lado Sarai - Lat: 28.524694, Long: 77.191502
+/* Marathahalli - Lat: 12.955804, Long: 77.709715
 
+// commenting down code as GMaps got uotdated & using HTML embedded code for Gmap
+------------------------------------------------------
     // main directions
       map = new GMaps({
-        el: '#map', lat: 28.524694, lng: 77.191502, zoom: 13, zoomControl : true, 
+        el: '#map', lat: 12.955804, lng: 77.709715, zoom: 13, zoomControl : true, 
         zoomControlOpt: { style : 'SMALL', position: 'TOP_LEFT' }, panControl : false, scrollwheel: false
       });
     // add address markers
-    map.addMarker({ lat: 28.524694, lng: 77.191502, title: 'Shammi Hans',
-      infoWindow: { content: '<p>F-125, Lado Sarai Main Road, New Delhi</p>' } });
+    map.addMarker({ lat: 12.955804, lng: 77.709715, title: 'Shammi Hans',
+      infoWindow: { content: '<p>Near Marathahalli Bridge,<br>Bengaluru, Karnataka, India</p>' } });
 
 /*----------------------------------------------------*/
 /*	contact form

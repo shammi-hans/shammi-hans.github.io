@@ -749,6 +749,8 @@ properly.
    .row .offset-9    { margin-left: 0%; }
    .row .offset-10   { margin-left: 0%; }
    .row .offset-11   { margin-left: 0%; }
+   .plane-div        { left: 15%!important; margin-top: 7%!important;}
+   .section-title .icon:after { bottom: -145%!important;}
 }
 
 /* mobile narrow

@@ -4,7 +4,7 @@
 
 body { 
   background: #0f0f0f; 
-  overflow-y: hidden;
+  overflow-x: hidden;
   -webkit-transition: all .3s;
   -moz-transition: all .3s;
   -ms-transition: all .3s;
@@ -31,16 +31,29 @@ body {
   -o-transition: all .3s;
 }
 
-.section-title:after {
+.section-title .icon {
+  position: relative;
+}
+.icon.up:after {
+  content: "\f0a6";
+  font-family: "FontAwesome";
+  color: #fff;
+}
+.section-title .icon:after {
   background: none repeat scroll 0 0 #fff;
-  bottom: -15px;
+  bottom: -125%;
   color: #333;
   content: "\f0a7";
-  left: 45%;
+  left: 47.5%;
   line-height: 1px;
   padding: 15px 5px;
   position: absolute;
   font-family: "FontAwesome";
+}
+.plane-div {
+  position: absolute;
+  left: 30%;
+  margin: 15px;
 }
 
 /* ------------------------------------------------------------------ */
@@ -517,7 +530,7 @@ body.show-menu #left-nav {
 
 
 
-#about .section-title:after {
+#about .section-title .icon:after {
   background: rgba(0,0,0,0.2);
   color: #fff;
   content: "\f007";
@@ -676,7 +689,7 @@ body.show-menu #left-nav {
    color: #666;
 }
 
-#resume .section-title:after {
+#resume .section-title .icon:after {
   background: #fff;
   color: #666;
   content: "\f02d";
@@ -777,6 +790,13 @@ body.show-menu #left-nav {
 .timeline-event-copy strong {
   font-weight: 700;
 }
+#resume .timeline-event-copy a {
+  color: #49b6d6;
+}
+#resume .timeline-event-copy a:hover {
+  text-decoration: underline;
+}
+
 .timeline-event-copy p:not(.timeline-event-thumbnail) {
   font-size: 14px;
   font-weight: 300;
@@ -870,8 +890,8 @@ body.show-menu #left-nav {
 }
 
 .photoshop {
-  background: #1abc9c;
-  width: 60%;
+  background: #3498db;
+  width: 70%;
   	-moz-animation: photoshop 2s ease;
   	-webkit-animation: photoshop 2s ease;
 }
@@ -888,7 +908,7 @@ body.show-menu #left-nav {
   	-webkit-animation: wordpress 2s ease;
 }
 .css {
-  background: #3498db;
+  background: #1abc9c;
   	width: 90%;
   	-moz-animation: css 2s ease;
   	-webkit-animation: css 2s ease;
@@ -900,15 +920,15 @@ body.show-menu #left-nav {
   	-webkit-animation: html5 2s ease;
 }
 .jquery {
-  background: #9b59b6;
-  	width: 50%;
+  background: #e74c3c;
+  	width: 95%;
   	-moz-animation: jquery 2s ease;
   	-webkit-animation: jquery 2s ease;
 }
 
 @-moz-keyframes photoshop {
   0%   { width: 0px;  }
-  100% { width: 60%;  }
+  100% { width: 70%;  }
 }
 @-moz-keyframes illustrator {
   0%   { width: 0px;  }
@@ -928,12 +948,12 @@ body.show-menu #left-nav {
 }
 @-moz-keyframes jquery {
   0%   { width: 0px;  }
-  100% { width: 50%;  }
+  100% { width: 95%;  }
 }
 
 @-webkit-keyframes photoshop {
   0%   { width: 0px;  }
-  100% { width: 60%;  }
+  100% { width: 70%;  }
 }
 @-webkit-keyframes illustrator {
   0%   { width: 0px;  }
@@ -953,7 +973,7 @@ body.show-menu #left-nav {
 }
 @-webkit-keyframes jquery {
   0%   { width: 0px;  }
-  100% { width: 50%;  }
+  100% { width: 95%;  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -1005,7 +1025,7 @@ body.show-menu #left-nav {
    border-color: #ddd;
 }
 
-#portfolio .section-title:after {
+#portfolio .section-title .icon:after {
   background: transparent;
   content: "\f0b1";
   color: #fff;
@@ -1266,6 +1286,8 @@ body.show-menu #left-nav {
   background: #F1F1F1;
   content: "\f0e6";
   color: #95A3A3;
+  top: 74px;
+  left: 48%;
 }
 
 
@@ -1316,7 +1338,12 @@ body.show-menu #left-nav {
 
 #contact a, #contact a:visited  { color: #FCAF09; }
 #contact a:hover, #contact a:focus { color: #fff; }
-
+#contact .lead>a {
+  color: #49b6d6;
+}
+.lead>a:hover {
+  text-decoration: underline;
+}
 #contact h1 {
    color: #EBEEEE;
    border-color: #666;
@@ -1326,10 +1353,15 @@ body.show-menu #left-nav {
    border-color: #fff;
  }
 
-#contact .section-title:after {
-  background: #191919;
+#contact .section-title .icon:after {
+  background: transparent;
+  content: "\f003";
+  color: #fff;
+  /*background: #191919;
   content: "\f003";
   color: #888;
+  top: 74px;
+  left: 50%;*/
 }
 
 
@@ -1681,16 +1713,16 @@ button.mfp-close, button.mfp-arrow {
 	text-shadow : 0 2px 10px cyan;
 }
 @font-face{
-	font-family:'FontAwesome';
-	src:url('../fonts/fontawesome-webfont.eot');
-	src:url('../fonts/fontawesome-webfont.eot') format('embedded-opentype'),
-		url('../fonts/fontawesome-webfont.woff') format('woff'),
-		url('../fonts/fontawesome-webfont.ttf') format('truetype'),
-		url('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0//fonts/fontawesome-webfont.svg') format('svg');
-		font-weight:normal;font-style:normal
-		}
+  font-family:'FontAwesome';
+  src:url('../fonts/fontawesome-webfont.eot');
+  src:url('../fonts/fontawesome-webfont.eot') format('embedded-opentype'),
+    url('../fonts/fontawesome-webfont.woff') format('woff'),
+    url('../fonts/fontawesome-webfont.ttf') format('truetype'),
+    url('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0//fonts/fontawesome-webfont.svg') format('svg');
+    font-weight:normal;font-style:normal
+    }
 .fa{display:inline-block;
-	font:normal normal normal 14px/1 FontAwesome;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale
-	}
+  font:normal normal normal 14px/1 FontAwesome;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale
+  }
 .fa-angle-double-down:before{content:"\f103"}
 .cur-def {cursor: default;}
