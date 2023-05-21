@@ -235,30 +235,30 @@ function parallax() {
       var data = 'name=' + name + '&email=' + email +
                '&subject=' + subject + '&message=' + message;
 
-      $.ajax({
+      // $.ajax({
 
-	      type: "POST",
-	      url: "sendEmail.php",
-	      data: data,
-	      success: function(msg) {
+	    //   type: "POST",
+	    //   url: "sendEmail.php",
+	    //   data: data,
+	    //   success: function(msg) {
 
-            // Message was sent
-            if (msg == 'OK') {
-               $('#image-loader').fadeOut();
-               $('#message-warning').hide();
-               $('#contactForm').fadeOut();
-               $('#message-success').fadeIn();   
-            }
-            // There was an error
-            else {
-               $('#image-loader').fadeOut();
-               $('#message-warning').html(msg);
-	            $('#message-warning').fadeIn();
-            }
+      //       // Message was sent
+      //       if (msg == 'OK') {
+      //          $('#image-loader').fadeOut();
+      //          $('#message-warning').hide();
+      //          $('#contactForm').fadeOut();
+      //          $('#message-success').fadeIn();   
+      //       }
+      //       // There was an error
+      //       else {
+      //          $('#image-loader').fadeOut();
+      //          $('#message-warning').html(msg);
+	    //         $('#message-warning').fadeIn();
+      //       }
 
-	      }
+	    //   }
 
-      });
+      // });
       return false;
    });
 
